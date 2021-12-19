@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="228EB2wIkfkloKbAym3rFJBbCcL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\RMIT\2021\Semester 3\Software Engineering Architecture\Oauth2\1\src\main\java\com\oauth2\authservice\security\oauth2\user" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AuthserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oauth2.authservice.AuthserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="" />
+      <created>1639210676903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639210676903</updated>
+      <workItem from="1639210678056" duration="5267000" />
+      <workItem from="1639229264827" duration="11803000" />
+      <workItem from="1639280922221" duration="352000" />
+      <workItem from="1639281752518" duration="8376000" />
+      <workItem from="1639318681548" duration="97000" />
+      <workItem from="1639362216427" duration="30000" />
+      <workItem from="1639399345800" duration="3832000" />
+      <workItem from="1639449219475" duration="2184000" />
+      <workItem from="1639490962299" duration="1636000" />
+      <workItem from="1639496436911" duration="349000" />
+      <workItem from="1639534740927" duration="405000" />
+      <workItem from="1639551438388" duration="6029000" />
+      <workItem from="1639569606812" duration="4338000" />
+      <workItem from="1639623837164" duration="711000" />
+      <workItem from="1639642467722" duration="2394000" />
+      <workItem from="1639658000941" duration="1395000" />
+      <workItem from="1639719293316" duration="118000" />
+      <workItem from="1639729715781" duration="1173000" />
+      <workItem from="1639810569690" duration="2181000" />
+      <workItem from="1639902330330" duration="225000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+</project>
