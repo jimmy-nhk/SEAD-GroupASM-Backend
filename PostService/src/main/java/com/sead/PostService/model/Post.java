@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,10 +18,10 @@ import java.util.List;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pid;
+    private Long id;
 
     @Column
-    private String tittle;
+    private String title;
 
     @Column(columnDefinition="text")
     private String bodyText;
@@ -35,11 +36,13 @@ public class Post {
     private String thumbnailURL;
 
     @Column
-    private long likedCount;
+    @Builder.Default
+    private long likedCount = 0;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "post" , cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<LikedUser> likedUserList;
+    @Builder.Default
+    private List<LikedUser> likedUserList = new ArrayList<>();
 
     @Column
     private long viewCount;

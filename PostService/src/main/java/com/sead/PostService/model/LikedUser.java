@@ -2,6 +2,7 @@ package com.sead.PostService.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,7 +23,7 @@ public class LikedUser {
     private Long uid;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "post_id", referencedColumnName = "pid")
+    @JoinColumn(name = "post_id", referencedColumnName = "id")
     @JsonIgnoreProperties({"likedUserList"})
     private Post post;
 
