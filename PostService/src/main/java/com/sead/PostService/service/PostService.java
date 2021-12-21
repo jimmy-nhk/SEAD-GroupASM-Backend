@@ -65,7 +65,7 @@ public class PostService {
         }
     }
 
-    public void deletePost(List<Post> posts){
+    public void deletePosts(List<Post> posts){
         for (Post post: posts) {
             deletePost(post.getId());
         }
