@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -106,7 +107,11 @@ public class CommentService {
         LocalDateTime lt
                 = LocalDateTime.now();
 
-        comment.setDatePosted(DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(lt));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        String text = lt.format(formatter);
+
+
+        comment.setDatePosted(text);
 
 
         return commentRepository.save(commentDb);
@@ -115,10 +120,15 @@ public class CommentService {
     // create comment
     public Comment createComment(Comment comment){
 
+        // get the current local date time
         LocalDateTime lt
                 = LocalDateTime.now();
 
-        comment.setDatePosted(DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(lt));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        String text = lt.format(formatter);
+
+
+        comment.setDatePosted(text);
         return commentRepository.save(comment);
     }
 
