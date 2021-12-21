@@ -21,19 +21,24 @@ public class Post {
     private Long id;
 
     @Column
-    private String title;
+    @Builder.Default
+    private String title = "";
 
     @Column(columnDefinition="text")
-    private String bodyText;
+    @Builder.Default
+    private String bodyText = "";
 
     @Column
-    private String category;
+    @Builder.Default
+    private String category = "";
 
     @Column
-    private String directors;
+    @Builder.Default
+    private String directors = "";
 
     @Column
-    private String thumbnailURL;
+    @Builder.Default
+    private String thumbnailURL = "";
 
     @Column
     @Builder.Default
@@ -45,5 +50,6 @@ public class Post {
     private List<LikedUser> likedUserList = new ArrayList<>();
 
     @Column
-    private long viewCount;
+    @Builder.Default
+    private long viewCount = 0;
 }
