@@ -22,7 +22,8 @@
     {
       "name": "app.auth.token-expiration-msec",
       "type": "java.lang.Long",
-      "sourceType": "com.oauth2.authservice.config.AppProperties$Auth"
+      "sourceType": "com.oauth2.authservice.config.AppProperties$Auth",
+      "defaultValue": 0
     },
     {
       "name": "app.auth.token-secret",
