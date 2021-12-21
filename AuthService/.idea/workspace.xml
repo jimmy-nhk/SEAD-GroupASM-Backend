@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="" />
+    <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/controller/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/repository/PostRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +55,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.oauth2.authservice.AuthserviceApplication" />
@@ -84,6 +102,7 @@
       <workItem from="1639729715781" duration="1173000" />
       <workItem from="1639810569690" duration="2181000" />
       <workItem from="1639902330330" duration="225000" />
+      <workItem from="1640098643013" duration="539000" />
     </task>
     <servers />
   </component>
