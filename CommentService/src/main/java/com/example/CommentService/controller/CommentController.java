@@ -51,8 +51,8 @@ public class CommentController {
     }
 
     // update comment
-    @PutMapping("/updateComment")
-    public Comment updateComment(@RequestBody Comment comment){
-        return commentService.updateComment(comment);
+    @PutMapping("/updateComment/commentId={commentId}/body={body}")
+    public Comment updateComment(@PathVariable Long commentId, @PathVariable String body){
+        return commentService.updateComment(commentId, body);
     }
 }

@@ -95,23 +95,22 @@ public class CommentService {
     }
 
     // update comment
-    public Comment updateComment(Comment comment){
+    public Comment updateComment(Long commentId , String body){
 
-        Comment commentDb = commentRepository.getById(comment.getId());
+        Comment commentDb = commentRepository.getById(commentId);
 
-        commentDb.setParentId(comment.getParentId());
+
         // fix these two only
-        commentDb.setBody(comment.getBody());
+        commentDb.setBody(body);
 
-        // get the current local date time
-        LocalDateTime lt
-                = LocalDateTime.now();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        String text = lt.format(formatter);
-
-
-        comment.setDatePosted(text);
+//        // get the current local date time
+//        LocalDateTime lt
+//                = LocalDateTime.now();
+//
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+//        String text = lt.format(formatter);
+//
+//        commentDb.setDatePosted(text);
 
 
         return commentRepository.save(commentDb);
