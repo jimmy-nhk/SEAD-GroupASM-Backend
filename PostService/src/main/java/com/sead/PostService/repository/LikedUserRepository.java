@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LikedUserRepository extends JpaRepository<LikedUser, Long> {
+    public LikedUser findLikedUserByPostIdAndUid(Long postId, Long userId);
 }

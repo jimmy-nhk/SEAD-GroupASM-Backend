@@ -8,7 +8,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "liked_users")
+@Table(name = "liked_users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"user_id", "post_id"})
+})
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -22,9 +24,18 @@ public class LikedUser {
     @Column(name = "user_id")
     private Long uid;
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "post_id", referencedColumnName = "id")
     @JsonIgnoreProperties({"likedUserList"})
     private Post post;
 
+    @Override
+    public String toString() {
+        return "LikedUser{" +
+                "id=" + id +
+                ", uid=" + uid +
+                ", post=" + post +
+                '}';
+    }
 }

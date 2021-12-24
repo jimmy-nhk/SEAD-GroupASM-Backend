@@ -4,6 +4,8 @@ import com.sead.PostService.model.LikedUser;
 import com.sead.PostService.model.Post;
 import com.sead.PostService.repository.LikedUserRepository;
 import com.sead.PostService.repository.PostRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,6 +25,8 @@ public class PostService {
     @Autowired
     LikedUserRepository likedUserRepository;
 
+    Logger logger = LoggerFactory.getLogger(PostService.class);
+
     public Post createPost(Post post){
         return postRepository.save(post);
     }
@@ -33,18 +37,30 @@ public class PostService {
 
     public Post updatePost(Post post){
 
-        Post existPost = postRepository.findById(post.getId()).orElse(null);
-        assert existPost != null;
+//        Post existPost = postRepository.findById(post.getId()).orElse(null);
+//        assert existPost != null;
+//
+//        existPost.setTitle(post.getTitle());
+//        existPost.setCategory(post.getCategory());
+//        existPost.setDirectors(post.getDirectors());
+//        existPost.setBodyText(post.getBodyText());
+//        existPost.setLikedCount(post.getLikedCount());
+//        existPost.setThumbnailURL(post.getThumbnailURL());
+//        existPost.setViewCount(post.getViewCount());
+//        System.out.println("Updated post:" + existPost.toString());
+//        return postRepository.save(existPost);
 
-        existPost.setTitle(post.getTitle());
-        existPost.setCategory(post.getCategory());
-        existPost.setDirectors(post.getDirectors());
-        existPost.setBodyText(post.getBodyText());
-        existPost.setLikedCount(post.getLikedCount());
-        existPost.setThumbnailURL(post.getThumbnailURL());
-        existPost.setViewCount(post.getViewCount());
-        System.out.println("Updated post:" + existPost.toString());
-        return postRepository.save(existPost);
+        try{
+            Optional<Post> possiblePost = postRepository.findById(post.getId());
+            if (possiblePost.isPresent()){
+                return postRepository.save(post);
+            } else{
+                return null;
+            }
+        } catch (Exception e){
+            // Id null
+            return null;
+        }
     }
 
     public List<Post> updatePosts(List<Post> posts){
@@ -65,9 +81,28 @@ public class PostService {
         }
     }
 
+    public boolean deletePost(Post post){
+        try{
+            Optional<Post> possiblePost = postRepository.findById(post.getId());
+            if (possiblePost.isPresent()){
+                postRepository.delete(possiblePost.get());
+                return true;
+            } else{
+                return false;
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public void deletePosts(List<Post> posts){
         for (Post post: posts) {
-            deletePost(post.getId());
+            try{
+                deletePost(post.getId());
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -88,14 +123,49 @@ public class PostService {
         }
     }
 
-    public void likePost(Long postId, Long userId){
+    public boolean likePost(Long postId, Long userId){
         Post post = getPostById(postId);
-        post.setLikedCount(post.getLikedCount() + 1);
-        post.getLikedUserList().add(LikedUser.builder()
-                .post(post)
-                .uid(userId)
-                .build());
-        postRepository.save(post);
+        if (post != null){
+            post.setLikedCount(post.getLikedCount() + 1);
+            post.getLikedUserList().add(LikedUser.builder()
+                    .post(post)
+                    .uid(userId)
+                    .build());
+            try{
+                postRepository.save(post);
+            } catch (Exception e){
+                this.logger.error("Duplicating like status");
+            }
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public boolean unlikePost(Long postId, Long userId){
+        Post post = getPostById(postId);
+        if (post != null){
+            try{
+                likedUserRepository.delete(likedUserRepository.findLikedUserByPostIdAndUid(postId, userId));
+                post.setLikedCount(post.getLikedCount() - 1);
+                postRepository.save(post);
+            } catch (Exception e){
+                this.logger.error("Duplicating unlike behavior");
+            }
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public boolean toggleLike(Long postId, Long userId){
+        Post post = getPostById(postId);
+        LikedUser likedUser = likedUserRepository.findLikedUserByPostIdAndUid(postId, userId);
+        if (likedUser == null){
+            return likePost(postId, userId);
+        } else{
+            return unlikePost(postId, userId);
+        }
     }
 
     public void viewPost(Long postId){

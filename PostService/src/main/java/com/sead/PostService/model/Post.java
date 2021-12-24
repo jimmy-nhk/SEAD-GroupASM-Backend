@@ -17,7 +17,7 @@ import java.util.List;
 @Builder
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -49,7 +49,23 @@ public class Post {
     @Builder.Default
     private List<LikedUser> likedUserList = new ArrayList<>();
 
+
     @Column
     @Builder.Default
     private long viewCount = 0;
+
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", bodyText='" + bodyText + '\'' +
+                ", category='" + category + '\'' +
+                ", directors='" + directors + '\'' +
+                ", thumbnailURL='" + thumbnailURL + '\'' +
+                ", likedCount=" + likedCount +
+                ", viewCount=" + viewCount +
+                '}';
+    }
 }
