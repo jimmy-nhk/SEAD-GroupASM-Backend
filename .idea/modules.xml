@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CommentService/CommentService.iml" filepath="$PROJECT_DIR$/CommentService/CommentService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POST/POST.iml" filepath="$PROJECT_DIR$/POST/POST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SEAD-GroupASM-Backend.iml" filepath="$PROJECT_DIR$/.idea/SEAD-GroupASM-Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AuthService/authservice.iml" filepath="$PROJECT_DIR$/AuthService/authservice.iml" />
+    </modules>
+  </component>
+</project>
