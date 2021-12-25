@@ -1,13 +1,19 @@
 package com.sead.PostService.controller;
 
 
+import com.sead.PostService.dto.PostDTOUserPOV;
 import com.sead.PostService.model.Post;
 import com.sead.PostService.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -36,6 +42,18 @@ public class PostController {
     @GetMapping(path = "/get/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
     public Page<Post> getAllProduct(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable String sortName, @PathVariable boolean isAsc){
         return postService.getALlPosts(pageNo, pageSize, sortName, isAsc);
+    }
+
+    @GetMapping(path = "/get-pov/uid={uid}&pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
+    public List<PostDTOUserPOV> getAllProduct(@PathVariable Long uid, @PathVariable int pageNo, @PathVariable int pageSize, @PathVariable String sortName, @PathVariable boolean isAsc){
+
+        List<PostDTOUserPOV> postDTOUserPOVs = new ArrayList<>();
+
+        for (Post post: postService.getALlPosts(pageNo, pageSize, sortName, isAsc)){
+            postDTOUserPOVs.add(post.toPostDTOUserPOV(uid));
+        }
+
+        return postDTOUserPOVs;
     }
 
     @GetMapping(path = "/get/id={id}")
