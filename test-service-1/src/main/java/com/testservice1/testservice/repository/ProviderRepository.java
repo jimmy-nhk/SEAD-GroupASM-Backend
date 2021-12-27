@@ -1,11 +1,11 @@
 package com.testservice1.testservice.repository;
 
-import com.testservice1.testservice.entity.Test_Class_1;
+import com.testservice1.testservice.entity.Provider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface Test_Repository extends JpaRepository<Test_Class_1, Long> {
+public interface ProviderRepository extends JpaRepository<Provider, Long> {
 
-    Test_Class_1 findByClassTest_Class_1_id(long id);
+    Provider findByProviderId(long id);
 }

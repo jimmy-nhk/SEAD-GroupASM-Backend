@@ -8,10 +8,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class TestService2Application {
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestService2Application.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 	@Bean

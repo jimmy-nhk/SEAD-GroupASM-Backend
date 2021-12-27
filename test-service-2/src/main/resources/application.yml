@@ -1,16 +1,15 @@
 server:
-  port: 9051
+  port: 9052
 
 spring:
   application:
-    name: PROVIDER-SERVICE
+    name: USER-SERVICE
 
 eureka:
   client:
-    fetch-registry: true
     register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
-

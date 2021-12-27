@@ -14,10 +14,10 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Test_Class_1 {
+public class Provider {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Test_Class_1_id;
+    private long providerId;
     private String name;
 
 
