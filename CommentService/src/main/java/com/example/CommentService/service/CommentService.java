@@ -25,9 +25,10 @@ public class CommentService {
 
 
     // iterate through evey sub comments of the current post
-    public List<Comment> getSubCommentsByParentId(Long commentId){
+    public List<Comment> getSubCommentsByParentId(Long commentId, Long postId){
 
-        List<Comment> allComments = commentRepository.findAll();
+//        List<Comment> allComments = commentRepository.findAll();
+        List<Comment> allComments   =  commentRepository.getCommentsByPostId(postId);
 
         List<Comment> allNeededComments = new ArrayList<>();
 
@@ -52,7 +53,7 @@ public class CommentService {
 
                     // add the current comment
                     allNeededComments.add(comment);
-                    allNeededComments.addAll(getSubCommentsByParentId(comment.getId()));
+                    allNeededComments.addAll(getSubCommentsByParentId(comment.getId() , postId));
                 }
 
 
@@ -154,13 +155,14 @@ public class CommentService {
     }
 
     // delete specific comment
-    public String deleteCommentById(Long commentId){
+    public String deleteCommentById(Long commentId ){
 
         try {
             Comment comment = commentRepository.findById(commentId).get();
 
+            Long postId = comment.getPostId();
             // find all the sub comments
-            List<Comment> allSubComments = getSubCommentsByParentId(comment.getId());
+            List<Comment> allSubComments = getSubCommentsByParentId(comment.getId() , postId);
 
             // add the root comment
             allSubComments.add(comment);
