@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bf3594a9-2e59-4c15-8182-3853504f1154" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RegistryService/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../APIGatewayService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../APIGatewayService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../APIGatewayService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../APIGatewayService/src/main/java/com/sead/Gateway/APIGatewayService/ApiGatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../APIGatewayService/src/main/java/com/sead/Gateway/APIGatewayService/ApiGatewayServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RegistryService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RegistryService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RegistryService/src/main/java/com/sead/Registry/RegistryService/RegistryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RegistryService/src/main/java/com/sead/Registry/RegistryService/RegistryServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
