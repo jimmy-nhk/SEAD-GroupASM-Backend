@@ -2,6 +2,7 @@ package com.sead.PostService.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sead.PostService.dto.PostDTOUserPOV;
 import lombok.*;
 
 import javax.persistence.*;
@@ -67,5 +68,28 @@ public class Post {
                 ", likedCount=" + likedCount +
                 ", viewCount=" + viewCount +
                 '}';
+    }
+
+    public PostDTOUserPOV toPostDTOUserPOV(Long userId){
+        boolean isLiked = false;
+
+        for (LikedUser likedUser: this.getLikedUserList()){
+            if (likedUser.getUid().equals(userId)){
+                isLiked = true;
+                break;
+            }
+        }
+
+        return PostDTOUserPOV.builder()
+                .id(this.id)
+                .bodyText(this.bodyText)
+                .category(this.category)
+                .directors(this.directors)
+                .thumbnailURL(this.thumbnailURL)
+                .likedCount(this.likedCount)
+                .likedUserList(this.likedUserList)
+                .viewCount(this.viewCount)
+                .isLiked(isLiked)
+                .build();
     }
 }
