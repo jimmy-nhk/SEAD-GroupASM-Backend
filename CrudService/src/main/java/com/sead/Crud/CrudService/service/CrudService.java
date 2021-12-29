@@ -11,7 +11,7 @@ public class CrudService {
     private RestTemplate restTemplate;
 
     public PostDTO getPostById(Long postId){
-        PostDTO postDTO = restTemplate.getForObject("http://localhost:8082/post/get/id=" + 3, PostDTO.class);
+        PostDTO postDTO = restTemplate.getForObject("http://localhost:8082/post/get/id=" + postId, PostDTO.class);
         System.out.println(postDTO.toString());
         return postDTO;
     }
