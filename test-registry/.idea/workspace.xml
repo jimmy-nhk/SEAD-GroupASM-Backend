@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf3594a9-2e59-4c15-8182-3853504f1154" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../APIGatewayService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APIGatewayService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../APIGatewayService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APIGatewayService/src/main/java/com/sead/Gateway/APIGatewayService/ApiGatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../APIGatewayService/src/main/java/com/sead/Gateway/APIGatewayService/ApiGatewayServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RegistryService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RegistryService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bf3594a9-2e59-4c15-8182-3853504f1154" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +20,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
