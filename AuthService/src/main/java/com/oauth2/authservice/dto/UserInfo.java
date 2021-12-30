@@ -8,4 +8,5 @@ import java.util.List;
 public class UserInfo {
     private String id, displayName, email;
     private List<String> roles;
+    private String imageUrl;
 }

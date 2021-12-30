@@ -19,4 +19,6 @@ public class UserDTO {
     private boolean enabled;
 
     private String displayName;
+
+    private String imageUrl;
 }

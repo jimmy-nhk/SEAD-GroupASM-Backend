@@ -1,9 +1,13 @@
 package com.sead.Crud.CrudService.controller;
 
+import com.sead.Crud.CrudService.dto.CommentDTO;
 import com.sead.Crud.CrudService.dto.PostDTO;
+import com.sead.Crud.CrudService.dto.UserCommentDTO;
 import com.sead.Crud.CrudService.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -13,6 +17,7 @@ public class CrudController {
     CrudService crudService;
 
     // CRUD
+    /**Post***************************************************/
         // Get Mapping
     @GetMapping(path = "/getPost/id={id}")
     public PostDTO getPostById(@PathVariable long id){
@@ -31,12 +36,57 @@ public class CrudController {
         return crudService.deletePost(postId);
     }
 
-
-
-    //FIXME: fail updating post
+    // update post
     @PutMapping(path = "/updatePost")
     public String updatePost(@RequestBody PostDTO postDTO){
 
         return crudService.updatePost(postDTO);
     }
+
+    //FIXME: cannot load the likeUserList @aHieu
+    @PostMapping(value = "/like/pid={pid}&uid={uid}")
+    public boolean likePost(@PathVariable Long pid, @PathVariable Long uid){
+
+        return crudService.likePost(pid, uid);
+    }
+
+    @DeleteMapping(value = "/unlike/pid={pid}&uid={uid}")
+    public boolean unlikePost(@PathVariable Long pid, @PathVariable Long uid){
+
+        return crudService.unlikePost(pid, uid);
+    }
+
+    //TODO: getAllPosts not yet implemented. Anh @Hieu helps me
+
+    /**Post***************************************************/
+
+    /**Comment***************************************************/
+    @PostMapping(path = "/createComment")
+    public CommentDTO createComment(@RequestBody CommentDTO commentDTO){
+
+        return crudService.createComment(commentDTO);
+    }
+
+    // delete comment
+    @DeleteMapping(path = "/deleteComment/id={commentId}")
+    public String deleteCommentById(@PathVariable Long commentId){
+
+        return crudService.deleteCommentById(commentId);
+    }
+
+    // update comment
+    @PutMapping(path = "/updateComment/commentId={commentId}/body={body}")
+    public String updateComment(@PathVariable Long commentId, @PathVariable String body){
+
+        return crudService.updateComment(commentId , body);
+    }
+
+    @GetMapping("/getAllComments/postId={postId}")
+    public List<UserCommentDTO> getAllCommentsWithUserBasedOnPostId(@PathVariable Long postId){
+
+        return crudService.getAllCommentsWithUserBasedOnPostId(postId);
+    }
+
+
+
 }

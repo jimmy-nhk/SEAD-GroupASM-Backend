@@ -98,11 +98,12 @@ public class CommentService {
     // update comment
     public Comment updateComment(Long commentId , String body){
 
-        Comment commentDb = commentRepository.getById(commentId);
+        try {
+            Comment commentDb = commentRepository.getById(commentId);
 
 
-        // fix these two only
-        commentDb.setBody(body);
+            // fix these two only
+            commentDb.setBody(body);
 
 //        // get the current local date time
 //        LocalDateTime lt
@@ -114,7 +115,11 @@ public class CommentService {
 //        commentDb.setDatePosted(text);
 
 
-        return commentRepository.save(commentDb);
+            return commentRepository.save(commentDb);
+        } catch (Exception e){
+            return null;
+        }
+
     }
 
     // create comment

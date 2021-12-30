@@ -1,14 +1,18 @@
 package com.sead.Crud.CrudService.service;
 
-import com.sead.Crud.CrudService.dto.PostDTO;
+import com.sead.Crud.CrudService.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,7 +20,11 @@ public class CrudService {
     @Autowired
     private RestTemplate restTemplate;
 
+    //FIXME: Em nghi nen chia ra may cai service khac nhau ko ta ????
+    
     private final String postUrl = "http://localhost:8082/post/";
+    private final String commentUrl = "http://localhost:8086/comments/";
+    private final String userUrl = "http://localhost:8080/comments/";
 
     public PostDTO getPostById(Long postId){
         PostDTO postDTO = restTemplate.getForObject(postUrl+"get/id=" + postId, PostDTO.class);
@@ -54,13 +62,99 @@ public class CrudService {
 
         try {
             restTemplate.delete(postUrl+"delete/id=" + postId);
-            //TODO: delete all the comments in the post
 
+            // Delete all the comments in the post
+            restTemplate.delete(commentUrl+"deleteCommentsInPost/postId="+postId);
             return "Successfully delete the post";
         }catch (Exception e){
             return "Fail to delete the post";
         }
     }
 
+    public boolean likePost(Long pid, Long uid){
 
+//        /like/pid={pid}&uid={uid}
+        Boolean likePost = restTemplate.postForObject(postUrl +"like/pid=" + pid +"&uid=" + uid, null,Boolean.class);
+
+        return likePost;
+    }
+
+    // delete like
+    public boolean unlikePost(Long pid, Long uid) {
+
+        try {
+            restTemplate.delete(postUrl+"like/pid=" + pid +"&uid=" + uid);
+
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    /**Post***************************************************/
+
+    /**Comment***************************************************/
+    public CommentDTO createComment(CommentDTO commentDTO){
+        CommentDTO comment = restTemplate.postForObject(commentUrl+"createComment" , commentDTO, CommentDTO.class);
+
+        return comment;
+    }
+
+    public String deleteCommentById(Long commentId){
+        try {
+            restTemplate.delete(commentUrl+"deleteComments/commentId="+ commentId);
+
+            return "Successfully delete the comment";
+        }catch (Exception e){
+            return "Fail to delete the comment";
+        }
+    }
+
+    // update post
+    public String updateComment( Long commentId, String body){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<CommentDTO> requestUpdate = new HttpEntity<>(null, headers);
+
+        try{
+            restTemplate.put(commentUrl+"/updateComment/commentId="+commentId+"/body="+ body , HttpMethod.PUT, requestUpdate, CommentDTO.class );
+
+            return "Successfully update the comment";
+        }catch (Exception e){
+            return "Fail to update comment";
+        }
+    }
+
+
+    public List<UserCommentDTO> getAllCommentsWithUserBasedOnPostId(Long postId) {
+
+        // return the comment list
+        CommentList commentList = restTemplate.getForObject(commentUrl+"getAllComments/postId=" + postId, CommentList.class);
+
+        // create the userDTO
+        UserDTO userDTO = null;
+
+        // create the list to return
+        List<UserCommentDTO> userCommentDTOList = new ArrayList<>();
+
+        HttpHeaders headers = new HttpHeaders();
+        String finalToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjQwODM0MTMwLCJleHAiOjE2NDE2OTgxMzB9._ZvUfL9KuhZj_HNgUNk20zbmyV5dm4kk-a9yOQkbHtVCoywoEtREswKmHi1JZ5HyfDLHvC0jE-Q4RUUs8jvNNw";
+        headers.setBearerAuth(finalToken);
+
+        UserCommentDTO userCommentDTO;
+        for (CommentDTO c: commentList.getCommentDTOList()
+             ) {
+
+            //FIXME: find the userDTO through the AuthService
+//            userDTO = restTemplate.get(userUrl+"")
+            userCommentDTO = new UserCommentDTO();
+            userCommentDTO.setCommentDTO(c);
+            userCommentDTO.setUserDTO(userDTO);
+            userCommentDTOList.add(userCommentDTO);
+        }
+
+        return userCommentDTOList;
+    }
 }
