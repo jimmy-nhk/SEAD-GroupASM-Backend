@@ -6,8 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+//@Builder
 public class UserDTO {
+    private Long id;
+
+    private String providerUserId;
+
+    private String email;
+
+    private boolean enabled;
+
+    private String displayName;
 }

@@ -22,6 +22,9 @@ public class Post {
     private Long id;
 
     @Column
+    private Long userId;
+
+    @Column
     @Builder.Default
     private String title = "";
 

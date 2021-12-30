@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/controller/PostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/repository/PostRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/service/PostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/LikedUserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CommentService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CommentService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/CommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/PostDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/PostDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +37,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
   </component>
   <component name="ProjectId" id="228EB2wIkfkloKbAym3rFJBbCcL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -79,7 +95,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -111,11 +127,12 @@
       <workItem from="1639810569690" duration="2181000" />
       <workItem from="1639902330330" duration="225000" />
       <workItem from="1640098643013" duration="539000" />
+      <workItem from="1640856219885" duration="2391000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
