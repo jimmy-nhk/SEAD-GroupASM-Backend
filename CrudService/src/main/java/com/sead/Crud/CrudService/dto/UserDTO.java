@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 public class UserDTO {
     private Long id;
 
-    private String providerUserId;
+//    private String providerUserId;
 
     private String email;
 
-    private boolean enabled;
+//    private boolean enabled;
 
     private String displayName;
 

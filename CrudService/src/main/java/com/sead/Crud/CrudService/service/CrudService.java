@@ -29,6 +29,19 @@ public class CrudService {
     private final String commentUrl = "http://localhost:8086/comments/";
     private final String userUrl = "http://localhost:8080/api/";
 
+    /**User***************************************************/
+    public UserDTO getUserById(Long userId){
+
+        HttpHeaders headers = new HttpHeaders();
+        String finalToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjQwODM0MTMwLCJleHAiOjE2NDE2OTgxMzB9._ZvUfL9KuhZj_HNgUNk20zbmyV5dm4kk-a9yOQkbHtVCoywoEtREswKmHi1JZ5HyfDLHvC0jE-Q4RUUs8jvNNw";
+        headers.setBearerAuth(finalToken);
+
+        HttpEntity<UserDTO> response = restTemplate.exchange(userUrl+"user/get/id="+userId, HttpMethod.GET, new HttpEntity<String>(headers),  UserDTO.class);
+        return response.getBody();
+    }
+
+
+    /**User***************************************************/
     public PostDTO getPostById(Long postId){
         PostDTO postDTO = restTemplate.getForObject(postUrl+"get/id=" + postId, PostDTO.class);
         System.out.println(postDTO.toString());

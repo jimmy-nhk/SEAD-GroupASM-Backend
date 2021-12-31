@@ -3,6 +3,7 @@ package com.sead.Crud.CrudService.controller;
 import com.sead.Crud.CrudService.dto.CommentDTO;
 import com.sead.Crud.CrudService.dto.PostDTO;
 import com.sead.Crud.CrudService.dto.UserCommentDTO;
+import com.sead.Crud.CrudService.dto.UserDTO;
 import com.sead.Crud.CrudService.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,14 @@ public class CrudController {
     CrudService crudService;
 
     // CRUD
+
+    /**User***************************************************/
+    @GetMapping(path = "/getUser/id={id}")
+    public UserDTO getUserById(@PathVariable long id){
+        return crudService.getUserById(id);
+    }
+
+
     /**Post***************************************************/
         // Get Mapping
     @GetMapping(path = "/getPost/id={id}")
