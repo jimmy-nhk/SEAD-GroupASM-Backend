@@ -43,6 +43,7 @@ public class User implements Serializable {
 
     private String provider;
 
+    private String imageUrl;
 
     @JsonIgnore
     @ManyToMany

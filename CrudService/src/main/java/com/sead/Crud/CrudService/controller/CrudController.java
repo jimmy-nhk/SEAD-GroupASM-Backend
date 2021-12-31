@@ -6,6 +6,7 @@ import com.sead.Crud.CrudService.dto.UserCommentDTO;
 import com.sead.Crud.CrudService.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -23,6 +24,13 @@ public class CrudController {
     public PostDTO getPostById(@PathVariable long id){
         return crudService.getPostById(id);
     }
+
+    @GetMapping(path = "/getPost/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
+    public Page<PostDTO> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize,
+                                    @PathVariable String sortName, @PathVariable boolean isAsc){
+        return crudService.getALlPosts(pageNo, pageSize, sortName, isAsc);
+    }
+
 
     @PostMapping(path = "/createPost")
     public PostDTO createPost(@RequestBody PostDTO postDTO){
@@ -43,7 +51,6 @@ public class CrudController {
         return crudService.updatePost(postDTO);
     }
 
-    //FIXME: cannot load the likeUserList @aHieu
     @PostMapping(value = "/like/pid={pid}&uid={uid}")
     public boolean likePost(@PathVariable Long pid, @PathVariable Long uid){
 
@@ -56,7 +63,6 @@ public class CrudController {
         return crudService.unlikePost(pid, uid);
     }
 
-    //TODO: getAllPosts not yet implemented. Anh @Hieu helps me
 
     /**Post***************************************************/
 

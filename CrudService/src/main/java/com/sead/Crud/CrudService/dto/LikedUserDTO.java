@@ -10,18 +10,18 @@ import lombok.*;
 @AllArgsConstructor
 public class LikedUserDTO {
 
-    private Long id;
+//    private Long id;
 
     private Long uid;
 
-    private PostDTO post;
+//    private PostDTO post;
 
     @Override
     public String toString() {
         return "LikedUser{" +
-                "id=" + id +
+//                "id=" + id +
                 ", uid=" + uid +
-                ", post=" + post +
+//                ", post=" + post +
                 '}';
     }
 }

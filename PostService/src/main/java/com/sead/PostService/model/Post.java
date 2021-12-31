@@ -49,7 +49,7 @@ public class Post {
     private long likedCount = 0;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "post" , cascade = CascadeType.ALL)
-    @JsonIgnore
+//    @JsonIgnore
     @Builder.Default
     private List<LikedUser> likedUserList = new ArrayList<>();
 

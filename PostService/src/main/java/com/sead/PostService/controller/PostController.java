@@ -22,8 +22,6 @@ public class PostController {
 
     @Autowired
     PostService postService;
-
-
     //CRUD
 
         // Post Mapping
@@ -40,19 +38,19 @@ public class PostController {
 
         // Get Mapping
     @GetMapping(path = "/get/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
-    public Page<Post> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable String sortName, @PathVariable boolean isAsc){
+    public Page<Post> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize,
+                                 @PathVariable String sortName, @PathVariable boolean isAsc){
         return postService.getALlPosts(pageNo, pageSize, sortName, isAsc);
     }
 
     @GetMapping(path = "/get-pov/uid={uid}&pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
-    public List<PostDTOUserPOV> getAllPost(@PathVariable Long uid, @PathVariable int pageNo, @PathVariable int pageSize, @PathVariable String sortName, @PathVariable boolean isAsc){
-
+    public List<PostDTOUserPOV> getAllPost(@PathVariable Long uid, @PathVariable int pageNo,
+                                           @PathVariable int pageSize, @PathVariable String sortName,
+                                           @PathVariable boolean isAsc){
         List<PostDTOUserPOV> postDTOUserPOVs = new ArrayList<>();
-
         for (Post post: postService.getALlPosts(pageNo, pageSize, sortName, isAsc)){
             postDTOUserPOVs.add(post.toPostDTOUserPOV(uid));
         }
-
         return postDTOUserPOVs;
     }
 

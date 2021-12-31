@@ -1,7 +1,10 @@
 package com.sead.Crud.CrudService.service;
 
 import com.sead.Crud.CrudService.dto.*;
+import com.sead.Crud.CrudService.util.model.RestPageImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -24,12 +27,17 @@ public class CrudService {
     
     private final String postUrl = "http://localhost:8082/post/";
     private final String commentUrl = "http://localhost:8086/comments/";
-    private final String userUrl = "http://localhost:8080/comments/";
+    private final String userUrl = "http://localhost:8080/api/";
 
     public PostDTO getPostById(Long postId){
         PostDTO postDTO = restTemplate.getForObject(postUrl+"get/id=" + postId, PostDTO.class);
         System.out.println(postDTO.toString());
         return postDTO;
+    }
+
+    public Page<PostDTO> getALlPosts(int pageNo, int pageSize, String sortName, boolean isAsc){
+        Page<PostDTO> postDTOPage = restTemplate.getForObject(postUrl+"get/pageNo="+pageNo+"&pageSize="+pageSize+"&sortby="+sortName+"&asc="+(isAsc?"true":"false"), RestPageImpl.class);
+        return postDTOPage;
     }
 
     public PostDTO createPost(PostDTO post){
@@ -81,7 +89,6 @@ public class CrudService {
 
     // delete like
     public boolean unlikePost(Long pid, Long uid) {
-
         try {
             restTemplate.delete(postUrl+"like/pid=" + pid +"&uid=" + uid);
 
