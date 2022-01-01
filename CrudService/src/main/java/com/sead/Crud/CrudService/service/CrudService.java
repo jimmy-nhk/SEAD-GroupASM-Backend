@@ -23,8 +23,7 @@ public class CrudService {
     @Autowired
     private RestTemplate restTemplate;
 
-    //FIXME: Em nghi nen chia ra may cai service khac nhau ko ta ????
-    
+
     private final String postUrl = "http://localhost:8082/post/";
     private final String commentUrl = "http://localhost:8086/comments/";
     private final String userUrl = "http://localhost:8080/api/";
@@ -151,7 +150,7 @@ public class CrudService {
     public List<UserCommentDTO> getAllCommentsWithUserBasedOnPostId(Long postId) {
 
         // return the comment list
-        CommentList commentList = restTemplate.getForObject(commentUrl+"getAllComments/postId=" + postId, CommentList.class);
+        CommentDTO[] commentList = restTemplate.getForObject(commentUrl+"getAllComments/postId=" + postId, CommentDTO[].class);
 
         // create the userDTO
         UserDTO userDTO = null;
@@ -164,12 +163,14 @@ public class CrudService {
         headers.setBearerAuth(finalToken);
 
         UserCommentDTO userCommentDTO;
-        for (CommentDTO c: commentList.getCommentDTOList()
+        for (CommentDTO c: commentList
              ) {
 
-            //FIXME: find the userDTO through the AuthService
-//            userDTO = restTemplate.get(userUrl+"")
+
             userCommentDTO = new UserCommentDTO();
+
+            // get the user DTO
+            userDTO = getUserById(c.getUserId());
             userCommentDTO.setCommentDTO(c);
             userCommentDTO.setUserDTO(userDTO);
             userCommentDTOList.add(userCommentDTO);
