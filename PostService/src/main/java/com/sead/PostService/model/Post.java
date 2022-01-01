@@ -48,6 +48,11 @@ public class Post {
     @Builder.Default
     private long likedCount = 0;
 
+    @Column
+    @Builder.Default
+    private String tagline;
+
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "post" , cascade = CascadeType.ALL)
 //    @JsonIgnore
     @Builder.Default

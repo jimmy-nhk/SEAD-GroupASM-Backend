@@ -38,4 +38,6 @@ public class PostDTO {
 
     private long viewCount = 0;
 
+    private String tagline = "";
+
 }

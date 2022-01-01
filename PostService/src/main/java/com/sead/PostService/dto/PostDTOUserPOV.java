@@ -27,4 +27,5 @@ public class PostDTOUserPOV {
     private List<LikedUser> likedUserList = new ArrayList<>();
     private long viewCount = 0;
     private boolean isLiked;
+    private String tagline;
 }
