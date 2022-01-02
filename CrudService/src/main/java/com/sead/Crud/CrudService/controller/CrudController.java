@@ -77,7 +77,7 @@ public class CrudController {
 
     /**Comment***************************************************/
     @PostMapping(path = "/createComment")
-    public CommentDTO createComment(@RequestBody CommentDTO commentDTO){
+    public UserCommentDTO createComment(@RequestBody CommentDTO commentDTO){
 
         return crudService.createComment(commentDTO);
     }
@@ -90,7 +90,7 @@ public class CrudController {
     }
 
     // update comment
-    @PutMapping(path = "/updateComment/commentId={commentId}/body={body}")
+    @PutMapping(path = "/updateComment/id={commentId}/body={body}")
     public String updateComment(@PathVariable Long commentId, @PathVariable String body){
 
         return crudService.updateComment(commentId , body);

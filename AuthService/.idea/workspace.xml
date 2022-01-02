@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CrudService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +35,14 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="JPA Inspector" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
@@ -115,6 +117,7 @@
       <workItem from="1640871373863" duration="1051000" />
       <workItem from="1640962702707" duration="2976000" />
       <workItem from="1641044530907" duration="1034000" />
+      <workItem from="1641091628867" duration="1303000" />
     </task>
     <servers />
   </component>
