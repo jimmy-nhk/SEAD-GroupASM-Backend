@@ -52,6 +52,11 @@ public class CrudService {
         return postDTOPage;
     }
 
+    public Page<PostDTO> getALlPosts(int pageNo, int pageSize, boolean isAsc){
+        Page<PostDTO> postDTOPage = restTemplate.getForObject(postUrl+"get/pageNo="+pageNo+"&pageSize="+pageSize+"&asc="+(isAsc?"true":"false"), RestPageImpl.class);
+        return postDTOPage;
+    }
+
     public PostDTO createPost(PostDTO post){
         PostDTO postDTO = restTemplate.postForObject(postUrl+"create" , post, PostDTO.class);
         System.out.println(postDTO.toString());

@@ -123,6 +123,14 @@ public class PostService {
         }
     }
 
+    public Page<Post> getALlPostsNoFilter(int pageNo, int pageSize, boolean isAsc){
+        if (isAsc){
+            return postRepository.findAll(PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.ASC, "id")));
+        } else{
+            return postRepository.findAll(PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, "id")));
+        }
+    }
+
     public boolean likePost(Long postId, Long userId){
         Post post = getPostById(postId);
         if (post != null){

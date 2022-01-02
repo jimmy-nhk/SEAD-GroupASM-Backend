@@ -6,14 +6,10 @@ import com.sead.PostService.model.Post;
 import com.sead.PostService.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.function.Function;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -41,6 +37,11 @@ public class PostController {
     public Page<Post> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize,
                                  @PathVariable String sortName, @PathVariable boolean isAsc){
         return postService.getALlPosts(pageNo, pageSize, sortName, isAsc);
+    }
+
+    @GetMapping(path = "/get/pageNo={pageNo}&pageSize={pageSize}&asc={isAsc}")
+    public Page<Post> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable boolean isAsc){
+        return postService.getALlPostsNoFilter(pageNo, pageSize, isAsc);
     }
 
     @GetMapping(path = "/get-pov/uid={uid}&pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
