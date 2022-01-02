@@ -50,7 +50,7 @@ public class Post {
 
     @Column
     @Builder.Default
-    private String tagline;
+    private String tagline= "";
 
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "post" , cascade = CascadeType.ALL)

@@ -113,10 +113,16 @@ public class CrudService {
     /**Post***************************************************/
 
     /**Comment***************************************************/
-    public CommentDTO createComment(CommentDTO commentDTO){
+    public UserCommentDTO createComment(CommentDTO commentDTO){
         CommentDTO comment = restTemplate.postForObject(commentUrl+"createComment" , commentDTO, CommentDTO.class);
 
-        return comment;
+        UserDTO userDTO = getUserById(comment.getUserId());
+
+        UserCommentDTO userCommentDTO = new UserCommentDTO();
+        userCommentDTO.setUserDTO(userDTO);
+        userCommentDTO.setCommentDTO(commentDTO);
+
+        return userCommentDTO;
     }
 
     public String deleteCommentById(Long commentId){
