@@ -40,6 +40,10 @@ public class CrudController {
         return crudService.getALlPosts(pageNo, pageSize, sortName, isAsc);
     }
 
+    @GetMapping(path = "/getPost/pageNo={pageNo}&pageSize={pageSize}&asc={isAsc}")
+    public Page<PostDTO> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable boolean isAsc){
+        return crudService.getALlPosts(pageNo, pageSize, isAsc);
+    }
 
     @PostMapping(path = "/createPost")
     public PostDTO createPost(@RequestBody PostDTO postDTO){
