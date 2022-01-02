@@ -1,7 +1,6 @@
 package com.sead.PostService.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sead.PostService.dto.PostDTOUserPOV;
 import lombok.*;
 
@@ -42,7 +41,11 @@ public class Post {
 
     @Column
     @Builder.Default
-    private String thumbnailURL = "";
+    private String coverUrl = "";
+
+    @Column
+    @Builder.Default
+    private String tags = "";
 
     @Column
     @Builder.Default
@@ -72,7 +75,8 @@ public class Post {
                 ", bodyText='" + bodyText + '\'' +
                 ", category='" + category + '\'' +
                 ", directors='" + directors + '\'' +
-                ", thumbnailURL='" + thumbnailURL + '\'' +
+                ", coverUrl='" + coverUrl + '\'' +
+                ", tags='" + tags + '\'' +
                 ", likedCount=" + likedCount +
                 ", viewCount=" + viewCount +
                 '}';
@@ -93,7 +97,8 @@ public class Post {
                 .bodyText(this.bodyText)
                 .category(this.category)
                 .directors(this.directors)
-                .thumbnailURL(this.thumbnailURL)
+                .coverUrl(this.coverUrl)
+                .tags(this.tags)
                 .likedCount(this.likedCount)
                 .likedUserList(this.likedUserList)
                 .viewCount(this.viewCount)

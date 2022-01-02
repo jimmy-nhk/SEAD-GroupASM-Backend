@@ -30,7 +30,9 @@ public class PostDTO {
 
     private String directors = "";
 
-    private String thumbnailURL = "";
+    private String coverUrl = "";
+
+    private String tags = "";
 
     private long likedCount = 0;
 

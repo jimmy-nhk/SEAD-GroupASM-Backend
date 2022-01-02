@@ -22,7 +22,8 @@ public class PostDTOUserPOV {
     private String bodyText = "";
     private String category = "";
     private String directors = "";
-    private String thumbnailURL = "";
+    private String coverUrl = "";
+    private String tags = "";
     private long likedCount = 0;
     private List<LikedUser> likedUserList = new ArrayList<>();
     private long viewCount = 0;
