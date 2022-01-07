@@ -5,6 +5,7 @@ import com.sead.Crud.CrudService.dto.PostDTO;
 import com.sead.Crud.CrudService.dto.UserCommentDTO;
 import com.sead.Crud.CrudService.dto.UserDTO;
 import com.sead.Crud.CrudService.service.CrudService;
+import com.sead.Crud.CrudService.service.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,9 @@ import java.util.List;
 public class CrudController {
     @Autowired
     CrudService crudService;
+
+    @Autowired
+    KafkaProducer kafkaProducer;
 
     // CRUD
 
@@ -43,6 +47,13 @@ public class CrudController {
     @GetMapping(path = "/getPost/pageNo={pageNo}&pageSize={pageSize}&asc={isAsc}")
     public Page<PostDTO> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable boolean isAsc){
         return crudService.getALlPosts(pageNo, pageSize, isAsc);
+    }
+
+    // kafka create post
+    @PostMapping(path = "/publish/createPost")
+    public boolean publishPost(@RequestBody PostDTO postDTO){
+
+        return kafkaProducer.sendMessagePost(postDTO);
     }
 
     @PostMapping(path = "/createPost")
@@ -84,6 +95,13 @@ public class CrudController {
     public UserCommentDTO createComment(@RequestBody CommentDTO commentDTO){
 
         return crudService.createComment(commentDTO);
+    }
+
+    // kafka create comment
+    @PostMapping(path = "/publish/createComment")
+    public boolean publishComment(@RequestBody CommentDTO commentDTO){
+
+        return kafkaProducer.sendMessageComment(commentDTO);
     }
 
     // delete comment
