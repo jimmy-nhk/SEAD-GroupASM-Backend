@@ -1,7 +1,7 @@
 package com.sead.PostService.model;
 
 
-import com.sead.PostService.dto.PostDTOUserPOV;
+import com.sead.PostService.dto.PostDTO;
 import lombok.*;
 
 import javax.persistence.*;
@@ -53,6 +53,10 @@ public class Post {
 
     @Column
     @Builder.Default
+    private boolean isLiked = false;
+
+    @Column
+    @Builder.Default
     private String tagline= "";
 
 
@@ -82,7 +86,7 @@ public class Post {
                 '}';
     }
 
-    public PostDTOUserPOV toPostDTOUserPOV(Long userId){
+    public PostDTO toPostDTOUserPOV(Long userId){
         boolean isLiked = false;
 
         for (LikedUser likedUser: this.getLikedUserList()){
@@ -92,7 +96,7 @@ public class Post {
             }
         }
 
-        return PostDTOUserPOV.builder()
+        return PostDTO.builder()
                 .id(this.id)
                 .bodyText(this.bodyText)
                 .category(this.category)

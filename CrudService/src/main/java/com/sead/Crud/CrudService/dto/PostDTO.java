@@ -19,27 +19,17 @@ import java.util.List;
 public class PostDTO {
 
     private Long id;
-
     private Long userId;
-
     private String title = "";
-
     private String bodyText = "";
-
     private String category = "";
-
     private String directors = "";
-
     private String coverUrl = "";
-
     private String tags = "";
-
     private long likedCount = 0;
-
     private List<LikedUserDTO> likedUserList = new ArrayList<>();
-
     private long viewCount = 0;
-
-    private String tagline = "";
+    private boolean isLiked;
+    private String tagline;
 
 }

@@ -1,7 +1,7 @@
 package com.sead.PostService.controller;
 
 
-import com.sead.PostService.dto.PostDTOUserPOV;
+import com.sead.PostService.dto.PostDTO;
 import com.sead.PostService.model.Post;
 import com.sead.PostService.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,14 +58,14 @@ public class PostController {
     }
 
     @GetMapping(path = "/get-pov/uid={uid}&pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}&asc={isAsc}")
-    public List<PostDTOUserPOV> getAllPost(@PathVariable Long uid, @PathVariable int pageNo,
-                                           @PathVariable int pageSize, @PathVariable String sortName,
-                                           @PathVariable boolean isAsc){
-        List<PostDTOUserPOV> postDTOUserPOVs = new ArrayList<>();
+    public List<PostDTO> getAllPost(@PathVariable Long uid, @PathVariable int pageNo,
+                                    @PathVariable int pageSize, @PathVariable String sortName,
+                                    @PathVariable boolean isAsc){
+        List<PostDTO> postDTOS = new ArrayList<>();
         for (Post post: postService.getALlPosts(pageNo, pageSize, sortName, isAsc)){
-            postDTOUserPOVs.add(post.toPostDTOUserPOV(uid));
+            postDTOS.add(post.toPostDTOUserPOV(uid));
         }
-        return postDTOUserPOVs;
+        return postDTOS;
     }
 
     @GetMapping(path = "/get/id={id}")

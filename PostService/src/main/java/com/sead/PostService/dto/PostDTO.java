@@ -16,8 +16,9 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class PostDTOUserPOV {
+public class PostDTO {
     private Long id;
+    private Long userId;
     private String title = "";
     private String bodyText = "";
     private String category = "";
@@ -29,4 +30,5 @@ public class PostDTOUserPOV {
     private long viewCount = 0;
     private boolean isLiked;
     private String tagline;
+
 }
