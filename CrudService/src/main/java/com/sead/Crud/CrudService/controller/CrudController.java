@@ -40,6 +40,21 @@ public class CrudController {
         return crudService.getALlPosts(pageNo, pageSize, sortName, isAsc);
     }
 
+    // Get Mapping
+    @GetMapping(path = "/getPost/category={category}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    public Page<PostDTO> getAllPostByCategory(@PathVariable String category, @PathVariable int pageNo, @PathVariable int pageSize,
+                                           @PathVariable String sortName){
+        return crudService.getALlPostsByCategory(category,pageNo, pageSize, sortName);
+    }
+
+    // Get Mapping
+    @GetMapping(path = "/getPost/userId={userId}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    public Page<PostDTO> getAllPostByUserId(@PathVariable Long userId, @PathVariable int pageNo, @PathVariable int pageSize,
+                                         @PathVariable String sortName){
+        return crudService.getALlPostsByUserId(userId,pageNo, pageSize, sortName);
+    }
+
+
     @GetMapping(path = "/getPost/pageNo={pageNo}&pageSize={pageSize}&asc={isAsc}")
     public Page<PostDTO> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable boolean isAsc){
         return crudService.getALlPosts(pageNo, pageSize, isAsc);

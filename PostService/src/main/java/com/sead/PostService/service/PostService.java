@@ -115,6 +115,16 @@ public class PostService {
         }
     }
 
+    public Page<Post> findAllPostsByCategory(String category, int pageNo, int pageSize, String sortName){
+
+        return postRepository.findAllByCategoryEquals(PageRequest.of(pageNo, pageSize, Sort.by(sortName).descending()), category);
+    }
+
+    public Page<Post> findAllPostsByUser(Long userId, int pageNo, int pageSize, String sortName){
+
+        return postRepository.findAllByUserIdEquals(PageRequest.of(pageNo, pageSize, Sort.by(sortName).descending()), userId);
+    }
+
     public Page<Post> getALlPosts(int pageNo, int pageSize, String sortName, boolean isAsc){
         if (isAsc){
             return postRepository.findAll(PageRequest.of(pageNo, pageSize, Sort.by(sortName).ascending()));
