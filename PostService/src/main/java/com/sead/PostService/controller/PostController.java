@@ -38,6 +38,19 @@ public class PostController {
                                  @PathVariable String sortName, @PathVariable boolean isAsc){
         return postService.getALlPosts(pageNo, pageSize, sortName, isAsc);
     }
+    // Get Mapping
+    @GetMapping(path = "/get/category={category}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    public Page<Post> getAllPostByCategory(@PathVariable String category, @PathVariable int pageNo, @PathVariable int pageSize,
+                                 @PathVariable String sortName){
+        return postService.findAllPostsByCategory(category,pageNo, pageSize, sortName);
+    }
+
+    // Get Mapping
+    @GetMapping(path = "/get/userId={userId}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    public Page<Post> getAllPostByUserId(@PathVariable Long userId, @PathVariable int pageNo, @PathVariable int pageSize,
+                                           @PathVariable String sortName){
+        return postService.findAllPostsByUser(userId,pageNo, pageSize, sortName);
+    }
 
     @GetMapping(path = "/get/pageNo={pageNo}&pageSize={pageSize}&asc={isAsc}")
     public Page<Post> getAllPost(@PathVariable int pageNo, @PathVariable int pageSize, @PathVariable boolean isAsc){
