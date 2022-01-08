@@ -52,7 +52,7 @@ public class CrudController {
     }
 
     // Get Mapping
-    @GetMapping(path = "/getPost/userId={userId}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    @GetMapping(path = "/getPost/userId={userId}/pageNo={pageNo}&pageSize={pageSize}&sortBy={sortName}")
     public Page<PostDTO> getAllPostByUserId(@PathVariable Long userId, @PathVariable int pageNo, @PathVariable int pageSize,
                                          @PathVariable String sortName){
         return crudService.getALlPostsByUserId(userId,pageNo, pageSize, sortName);
