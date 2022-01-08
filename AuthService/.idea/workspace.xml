@@ -5,71 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/config/KafkaProducerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/KafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/consumer/KafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/consumer/KafkaConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APIGatewayService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../APIGatewayService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/AuthserviceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/AuthserviceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/AppProperties$Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/AppProperties$Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/AppProperties$OAuth2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/AppProperties$OAuth2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/AppProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/AppProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/CurrentUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/CurrentUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/RestAuthenticationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/RestAuthenticationEntryPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/SetupDataLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/SetupDataLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/ApiResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/JwtAuthenticationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/JwtAuthenticationResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/LocalUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/LocalUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/SignUpRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/SignUpRequest$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/SignUpRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/SignUpRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/SocialProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/SocialProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/UserInfo$UserInfoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/UserInfo$UserInfoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/dto/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/BadRequestException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/BadRequestException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/OAuth2AuthenticationProcessingException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/OAuth2AuthenticationProcessingException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/ResourceNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/ResourceNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/UserAlreadyExistAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/UserAlreadyExistAuthenticationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/handler/RestResponseEntityExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/exception/handler/RestResponseEntityExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/model/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/repository/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/jwt/TokenAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/jwt/TokenAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/jwt/TokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/jwt/TokenProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/CustomOAuth2UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/CustomOAuth2UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/CustomOidcUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/CustomOidcUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/HttpCookieOAuth2AuthorizationRequestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/HttpCookieOAuth2AuthorizationRequestRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/OAuth2AccessTokenResponseConverterWithDefaults.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/OAuth2AccessTokenResponseConverterWithDefaults.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/handler/OAuth2AuthenticationFailureHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/handler/OAuth2AuthenticationFailureHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/handler/OAuth2AuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/handler/OAuth2AuthenticationSuccessHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/FacebookOAuth2UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/FacebookOAuth2UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/GithubOAuth2UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/GithubOAuth2UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/GoogleOAuth2UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/GoogleOAuth2UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/LinkedinOAuth2UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/LinkedinOAuth2UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/OAuth2UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/OAuth2UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/OAuth2UserInfoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/security/oauth2/user/OAuth2UserInfoFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/service/LocalUserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/service/LocalUserDetailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/util/CookieUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/util/CookieUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/util/GeneralUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/util/GeneralUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/validators/PasswordMatches.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/validators/PasswordMatches.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/validators/PasswordMatchesValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oauth2/authservice/validators/PasswordMatchesValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/oauth2/authservice/AuthserviceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/oauth2/authservice/AuthserviceApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommentService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CommentService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CrudService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/PostDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/dto/PostDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PostService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/dto/PostDTOUserPOV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/dto/PostDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,37 +140,37 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1641481655826">
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1641651481923">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655826" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1641481655824">
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481923" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1641651481919">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655824" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1641481655823">
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481919" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1641651481918">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655823" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1641481655825">
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481918" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1641651481921">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655825" />
-    <state width="1750" height="318" key="GridCell.Tab.1.bottom" timestamp="1641481655830">
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481921" />
+    <state width="1750" height="318" key="GridCell.Tab.1.bottom" timestamp="1641651481930">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655830" />
-    <state width="1750" height="318" key="GridCell.Tab.1.center" timestamp="1641481655828">
+    <state width="1750" height="318" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481930" />
+    <state width="1750" height="318" key="GridCell.Tab.1.center" timestamp="1641651481927">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655828" />
-    <state width="1750" height="318" key="GridCell.Tab.1.left" timestamp="1641481655827">
+    <state width="1750" height="318" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481927" />
+    <state width="1750" height="318" key="GridCell.Tab.1.left" timestamp="1641651481925">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655827" />
-    <state width="1750" height="318" key="GridCell.Tab.1.right" timestamp="1641481655829">
+    <state width="1750" height="318" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481925" />
+    <state width="1750" height="318" key="GridCell.Tab.1.right" timestamp="1641651481928">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1641481655829" />
+    <state width="1750" height="318" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481928" />
   </component>
 </project>

@@ -48,7 +48,7 @@ public class CrudService {
     }
 
     public Page<PostDTO> getALlPostsByCategory(String category, int pageNo, int pageSize, String sortName){
-        Page<PostDTO> postDTOPage = restTemplate.getForObject(POST_URL+"get/category=" + category + "/pageNo="+pageNo+"&pageSize="+pageSize+"&sortby="+sortName, RestPageImpl.class);
+        Page<PostDTO> postDTOPage = restTemplate.getForObject(POST_URL+"get/category=" + category + "/pageNo="+pageNo+"&pageSize="+pageSize+"&sortBy="+sortName, RestPageImpl.class);
         return postDTOPage;
     }
 

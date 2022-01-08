@@ -45,7 +45,7 @@ public class CrudController {
     }
 
     // Get Mapping
-    @GetMapping(path = "/getPost/category={category}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    @GetMapping(path = "/getPost/category={category}/pageNo={pageNo}&pageSize={pageSize}&sortBy={sortName}")
     public Page<PostDTO> getAllPostByCategory(@PathVariable String category, @PathVariable int pageNo, @PathVariable int pageSize,
                                            @PathVariable String sortName){
         return crudService.getALlPostsByCategory(category,pageNo, pageSize, sortName);

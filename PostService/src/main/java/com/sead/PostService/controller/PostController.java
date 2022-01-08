@@ -39,14 +39,14 @@ public class PostController {
         return postService.getALlPosts(pageNo, pageSize, sortName, isAsc);
     }
     // Get Mapping
-    @GetMapping(path = "/get/category={category}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    @GetMapping(path = "/get/category={category}/pageNo={pageNo}&pageSize={pageSize}&sortBy={sortName}")
     public Page<Post> getAllPostByCategory(@PathVariable String category, @PathVariable int pageNo, @PathVariable int pageSize,
                                  @PathVariable String sortName){
         return postService.findAllPostsByCategory(category,pageNo, pageSize, sortName);
     }
 
     // Get Mapping
-    @GetMapping(path = "/get/userId={userId}/pageNo={pageNo}&pageSize={pageSize}&sortby={sortName}")
+    @GetMapping(path = "/get/userId={userId}/pageNo={pageNo}&pageSize={pageSize}&sortBy={sortName}")
     public Page<Post> getAllPostByUserId(@PathVariable Long userId, @PathVariable int pageNo, @PathVariable int pageSize,
                                            @PathVariable String sortName){
         return postService.findAllPostsByUser(userId,pageNo, pageSize, sortName);
