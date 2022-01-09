@@ -30,6 +30,12 @@ public class CrudController {
         return crudService.getUserById(id);
     }
 
+    @PutMapping(path = "/updateUser")
+    public UserDTO updateUser(@RequestBody UserDTO user){
+        System.out.println(user);
+        return crudService.updateUser(user);
+    }
+
 
     /**Post***************************************************/
         // Get Mapping
@@ -102,6 +108,10 @@ public class CrudController {
         return crudService.unlikePost(pid, uid);
     }
 
+    @PutMapping(value = "/toggleLike/pid={pid}&uid={uid}")
+    public boolean toggleLikePost(@PathVariable Long pid, @PathVariable Long uid) {
+        return crudService.toggleLikePost(pid, uid);
+    }
 
     /**Post***************************************************/
 

@@ -23,14 +23,26 @@ public class CrudService {
     private final String POST_URL = "http://localhost:8082/post/";
     private final String COMMENT_URL = "http://localhost:8086/comments/";
     private final String USER_URL = "http://localhost:8080/api/";
-    private final String TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjQwODM0MTMwLCJleHAiOjE2NDE2OTgxMzB9._ZvUfL9KuhZj_HNgUNk20zbmyV5dm4kk-a9yOQkbHtVCoywoEtREswKmHi1JZ5HyfDLHvC0jE-Q4RUUs8jvNNw";
+    private final String TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjQxNzA0ODkxLCJleHAiOjE2NDI1Njg4OTF9.GfAiVaY4pLHaYRoy5Wlzoqz5e38zT_jaQxqmDYGafDtWDPH_z-nxJOEtbnLmwNG4CiCEfD6rpfse411L_q90tA";
     /**User***************************************************/
     public UserDTO getUserById(Long userId){
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(TOKEN);
 
-        HttpEntity<UserDTO> response = restTemplate.exchange(USER_URL +"user/get/id="+userId, HttpMethod.GET, new HttpEntity<String>(headers),  UserDTO.class);
+        HttpEntity<UserDTO> response = restTemplate.exchange(USER_URL +"user/get/id="+userId,
+                HttpMethod.GET, new HttpEntity<String>(headers),  UserDTO.class);
+        return response.getBody();
+    }
+
+    public UserDTO updateUser(UserDTO user){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(TOKEN);
+
+        HttpEntity<UserDTO> httpEntity = new HttpEntity<>(user, headers);
+
+        HttpEntity<UserDTO> response = restTemplate.exchange(USER_URL +"user/update", HttpMethod.PUT, httpEntity,  UserDTO.class);
         return response.getBody();
     }
 
@@ -114,6 +126,16 @@ public class CrudService {
         try {
             restTemplate.delete(POST_URL +"like/pid=" + pid +"&uid=" + uid);
 
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    // toggle like
+    public boolean toggleLikePost(Long pid, Long uid){
+        try {
+            restTemplate.put(POST_URL +"like/pid=" + pid +"&uid=" + uid, HttpMethod.PUT);
             return true;
         }catch (Exception e){
             return false;

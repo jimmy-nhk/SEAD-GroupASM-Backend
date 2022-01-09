@@ -9,10 +9,7 @@ import com.oauth2.authservice.util.GeneralUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -73,4 +70,20 @@ public class UserController {
         }
     }
 
+    @PutMapping("/user/update")
+    @PreAuthorize("hasRole('ADMIN')")
+    public UserInfo updateUser(@RequestBody UserInfo userInfo){
+        Optional<User> optionalUser = userService.findUserById(Long.valueOf(userInfo.getId()));
+        System.out.println(userInfo);
+        if (optionalUser.isPresent()){
+            User user = optionalUser.get();
+            user.setDisplayName(userInfo.getDisplayName());
+            user.setImageUrl(userInfo.getImageUrl());
+            userService.updateUser(user);
+            System.out.println("User updated");
+        } else{
+            System.out.println("Cannot find user");
+        }
+        return userInfo;
+    }
 }

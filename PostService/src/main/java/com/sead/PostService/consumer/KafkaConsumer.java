@@ -35,7 +35,7 @@ public class KafkaConsumer {
         post.setTags(postDTO.getTags());
         post.setLikedCount(postDTO.getLikedCount());
         post.setViewCount(postDTO.getViewCount());
-        post.setLiked(postDTO.isLiked());
+//        post.setLiked(postDTO.isLiked());
         post.setTagline(postDTO.getTagline());
 
 

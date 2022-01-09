@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="" />
+    <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/consumer/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/consumer/KafkaConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,39 +144,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1641651481923">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481923" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1641651481919">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481919" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1641651481918">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481918" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1641651481921">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481921" />
-    <state width="1750" height="318" key="GridCell.Tab.1.bottom" timestamp="1641651481930">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481930" />
-    <state width="1750" height="318" key="GridCell.Tab.1.center" timestamp="1641651481927">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481927" />
-    <state width="1750" height="318" key="GridCell.Tab.1.left" timestamp="1641651481925">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481925" />
-    <state width="1750" height="318" key="GridCell.Tab.1.right" timestamp="1641651481928">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1641651481928" />
   </component>
 </project>
