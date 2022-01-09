@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cd1f4e-238f-438a-8e7d-4d5961b38747" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oauth2/authservice/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/controller/CrudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudService/src/main/java/com/sead/Crud/CrudService/service/CrudService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/consumer/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/consumer/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/java/com/sead/PostService/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PostService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +45,6 @@
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.8.3-bin/5a6n1u8or3307vo2u2jgmkhm0t/apache-maven-3.8.3" />
-      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="228EB2wIkfkloKbAym3rFJBbCcL" />
@@ -134,6 +121,7 @@
       <workItem from="1641474905015" duration="946000" />
       <workItem from="1641515594266" duration="44000" />
       <workItem from="1641655880931" duration="383000" />
+      <workItem from="1641706902405" duration="2202000" />
     </task>
     <servers />
   </component>
