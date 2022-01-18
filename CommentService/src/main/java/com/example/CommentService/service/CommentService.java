@@ -3,10 +3,12 @@ package com.example.CommentService.service;
 import com.example.CommentService.model.Comment;
 import com.example.CommentService.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -18,6 +20,26 @@ public class CommentService {
 
     @Autowired
     private CommentRepository commentRepository;
+
+    private final String COMMENT_CACHE = "COMMENT";
+
+    @Autowired
+    RedisTemplate<String, Object> redisTemplate;
+    private HashOperations<String, Long, Object> hashOperations;
+
+    // This annotation makes sure that the method needs to be executed after 
+    // dependency injection is done to perform any initialization.
+    @PostConstruct
+    private void initializeHashOperations() {
+        hashOperations = redisTemplate.opsForHash();
+    }
+
+    // Save operation.
+    public void saveToCache(final Comment comment) {
+        hashOperations.put(COMMENT_CACHE, comment.getId(), comment);
+    }
+
+    
 
     public List<Comment> getAllComments(){
         return commentRepository.findAll();
@@ -96,6 +118,47 @@ public class CommentService {
     }
 
     // update comment
+    public Comment updateCommentRedis(Long commentId , String body){
+
+        try {
+            Comment commentDb = commentRepository.getById(commentId);
+
+
+            // fix these two only
+            commentDb.setBody(body);
+
+//        // get the current local date time
+//        LocalDateTime lt
+//                = LocalDateTime.now();
+//
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+//        String text = lt.format(formatter);
+//
+//        commentDb.setDatePosted(text);
+
+            saveToCache(commentDb);
+
+            return commentRepository.save(commentDb);
+        } catch (Exception e){
+            return null;
+        }
+
+    }
+
+    public Comment getCommentByIdRedis(Long commentId){
+        Comment comment = (Comment) hashOperations.get(COMMENT_CACHE, commentId);
+
+        if(comment != null) return comment;
+
+        comment = getCommentById(commentId);
+        saveToCache(comment);
+
+        return comment;
+    }
+
+
+
+    // update comment
     public Comment updateComment(Long commentId , String body){
 
         try {
@@ -122,6 +185,11 @@ public class CommentService {
 
     }
 
+    public Comment getCommentById(Long commentId){
+
+        return commentRepository.getById(commentId);
+    }
+
     // create comment
     public Comment createComment(Comment comment){
 
@@ -137,10 +205,7 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
-    public Comment getCommentById(Long commentId){
 
-        return commentRepository.getById(commentId);
-    }
 
     // delete comment by post
     public String deleteCommentByPost(Long postId){

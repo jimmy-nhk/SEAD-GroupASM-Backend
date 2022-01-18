@@ -26,6 +26,8 @@ public class Comment {
     @Column
     private String body;
 
+    public Comment(){}
+
 
     public Long getParentId() {
         return parentId;

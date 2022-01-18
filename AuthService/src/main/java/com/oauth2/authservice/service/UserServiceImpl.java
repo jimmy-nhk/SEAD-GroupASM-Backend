@@ -13,6 +13,8 @@ import com.oauth2.authservice.security.oauth2.user.OAuth2UserInfo;
 import com.oauth2.authservice.security.oauth2.user.OAuth2UserInfoFactory;
 import com.oauth2.authservice.util.GeneralUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.oidc.OidcIdToken;
 import org.springframework.security.oauth2.core.oidc.OidcUserInfo;
@@ -20,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Service
@@ -32,6 +35,44 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    private final String USER_CACHE = "USER";
+
+    @Autowired
+    RedisTemplate<String, Object> redisTemplate;
+    private HashOperations<String, Long, Object> hashOperations;
+
+    // This annotation makes sure that the method needs to be executed after
+    // dependency injection is done to perform any initialization.
+    @PostConstruct
+    private void initializeHashOperations() {
+        hashOperations = redisTemplate.opsForHash();
+    }
+
+    // Save operation.
+    public void saveToCache(final User user) {
+        hashOperations.put(USER_CACHE, user.getId(), user);
+    }
+
+
+    public User findUserByIdRedis(Long id) {
+        User user = (User) hashOperations.get(USER_CACHE, id);
+
+        if(user != null) return user;
+
+        user = findUserById(id).get();
+        saveToCache(user);
+
+        return user;
+    }
+
+    public User updateUserRedis(User user){
+        saveToCache(user);
+
+        return userRepository.save(user);
+    }
+
+
+
 
     @Override
     @Transactional(value = "transactionManager")
@@ -48,6 +89,14 @@ public class UserServiceImpl implements UserService{
         user = userRepository.save(user);
         userRepository.flush();
         return user;
+    }
+
+
+
+
+    @Override
+    public Optional<User> findUserById(Long id) {
+        return userRepository.findById(id);
     }
 
     public User updateUser(User user){
@@ -108,10 +157,7 @@ public class UserServiceImpl implements UserService{
                 .addSocialProvider(GeneralUtils.toSocialProvider(registrationId)).addPassword("changeit").build();
     }
 
-    @Override
-    public Optional<User> findUserById(Long id) {
-        return userRepository.findById(id);
-    }
+
 
 
 }
