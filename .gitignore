@@ -5,3 +5,15 @@ AuthService/.idea/workspace.xml
 .DS_Store
 AuthService/.idea/workspace.xml
 AuthService/.idea/workspace.xml
+/APIGatewayService/.mvn/
+/APIGatewayService/target/
+/AuthService/.mvn/
+/AuthService/target/
+/CommentService/.mvn/
+/CommentService/target/
+/CrudService/.mvn/
+/CrudService/target/
+/PostService/.mvn/
+/PostService/target/
+/RegistryService/target/
+/RegistryService/.mvn/
