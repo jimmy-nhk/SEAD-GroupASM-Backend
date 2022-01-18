@@ -44,15 +44,30 @@ public class CommentController {
         return commentService.getCommentById(commentId);
     }
 
+    // update comment
+    @PutMapping("/updateComment/commentId={commentId}/body={body}")
+    public Comment updateComment(@PathVariable Long commentId, @PathVariable String body){
+        return commentService.updateComment(commentId, body);
+    }
+
+    // get specific comment
+    @GetMapping("/getCommentRedis/commentId={commentId}")
+    public Comment getCommentByIdRedis(@PathVariable Long commentId){
+
+        return commentService.getCommentByIdRedis(commentId);
+    }
+
+    // update comment
+    @PutMapping("/updateCommentRedis/commentId={commentId}/body={body}")
+    public Comment updateCommentRedis(@PathVariable Long commentId, @PathVariable String body){
+        return commentService.updateCommentRedis(commentId, body);
+    }
+
     // create comment
     @PostMapping("/createComment")
     public Comment createComment(@RequestBody Comment comment){
         return commentService.createComment(comment);
     }
 
-    // update comment
-    @PutMapping("/updateComment/commentId={commentId}/body={body}")
-    public Comment updateComment(@PathVariable Long commentId, @PathVariable String body){
-        return commentService.updateComment(commentId, body);
-    }
+
 }

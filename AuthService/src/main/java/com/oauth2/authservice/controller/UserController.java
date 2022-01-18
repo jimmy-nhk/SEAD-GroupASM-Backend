@@ -86,4 +86,39 @@ public class UserController {
         }
         return userInfo;
     }
+
+    @GetMapping("/userRedis/get/id={id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public UserInfo getUserByIdRedis(@PathVariable long id){
+        User user = userService.findUserByIdRedis(id);
+        if (user != null){
+            List<String> roles = user.getRoles().stream().map(item -> item.toString()).collect(Collectors.toList());
+            return UserInfo.builder()
+                    .displayName(user.getDisplayName())
+                    .email(user.getEmail())
+                    .id(user.getId().toString())
+                    .imageUrl(user.getImageUrl())
+                    .roles(roles)
+                    .build();
+        } else {
+            return null;
+        }
+    }
+
+    @PutMapping("/userRedis/update")
+    @PreAuthorize("hasRole('ADMIN')")
+    public UserInfo updateUserRedis(@RequestBody UserInfo userInfo){
+        User user = userService.findUserByIdRedis(Long.valueOf(userInfo.getId()));
+
+        System.out.println(userInfo);
+        if (user != null){
+            user.setDisplayName(userInfo.getDisplayName());
+            user.setImageUrl(userInfo.getImageUrl());
+            userService.updateUser(user);
+            System.out.println("User updated");
+        } else{
+            System.out.println("Cannot find user");
+        }
+        return userInfo;
+    }
 }
