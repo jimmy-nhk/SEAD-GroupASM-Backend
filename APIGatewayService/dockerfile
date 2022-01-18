@@ -1,0 +1,8 @@
+FROM openjdk:17-jdk-alpine
+workdir /app
+copy /scripts/wait /app/
+run chmod +x /app
+run apk --no-cache add curl
+
+copy /target/APIGatewayService-0.0.1-SNAPSHOT.jar /app/
+cmd ./wait && java -jar APIGatewayService-0.0.1-SNAPSHOT.jar

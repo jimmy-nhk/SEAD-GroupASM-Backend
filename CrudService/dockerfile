@@ -1,0 +1,4 @@
+FROM openjdk:17-jdk-alpine
+workdir /app
+copy /target/CrudService-0.0.1-SNAPSHOT.jar /app/
+cmd ./wait && java -jar CrudService-0.0.1-SNAPSHOT.jar

@@ -1,0 +1,4 @@
+FROM openjdk:17-jdk-alpine
+workdir /app
+copy /target/RegistryService-0.0.1-SNAPSHOT.jar /app/
+ENTRYPOINT ["java","-jar","/RegistryService-0.0.1-SNAPSHOT.jar"]

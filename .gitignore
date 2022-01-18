@@ -5,6 +5,7 @@ AuthService/.idea/workspace.xml
 .DS_Store
 AuthService/.idea/workspace.xml
 AuthService/.idea/workspace.xml
+
 /APIGatewayService/.mvn/
 /APIGatewayService/target/
 /AuthService/.mvn/
@@ -17,3 +18,10 @@ AuthService/.idea/workspace.xml
 /PostService/target/
 /RegistryService/target/
 /RegistryService/.mvn/
+/test-service-2/
+/test-service-1/
+/test-registry/
+/test-api-gateway/
+/kafka-topics-creator/
+/POST/
+

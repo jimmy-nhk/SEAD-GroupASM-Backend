@@ -1,0 +1,5 @@
+FROM openjdk:17-jdk-alpine
+workdir /app
+copy /target/CommentService-0.0.1-SNAPSHOT.jar /app/
+cmd ./wait && java -jar CommentService-0.0.1-SNAPSHOT.jar
+
