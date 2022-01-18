@@ -73,11 +73,21 @@ public class PostController {
 //        postService.viewPost(id);
         return postService.getPostById(id);
     }
+    @GetMapping(path = "/getRedis/id={id}")
+    public Post getPostByIdRedis(@PathVariable Long id){
+//        postService.viewPost(id);
+        return postService.findPostByIdRedis(id);
+    }
 
-        // Put Mapping
+    // Put Mapping
     @PutMapping(path = "/update")
     public Post updatePost(@RequestBody Post post){
         return postService.updatePost(post);
+    }
+    // Put Mapping redis
+    @PutMapping(path = "/updateRedis")
+    public Post updatePostRedis(@RequestBody Post post){
+        return postService.updatePostRedis(post);
     }
 
     @PutMapping(path = "/many-update")
